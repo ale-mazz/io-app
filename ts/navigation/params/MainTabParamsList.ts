@@ -10,4 +10,5 @@ export type MainTabParamsList = {
   [SERVICES_ROUTES.SERVICES_HOME]: undefined;
   [ROUTES.PAYMENTS_HOME]: undefined;
   [ROUTES.PROFILE_MAIN]: undefined;
+  [ROUTES.PROFILE_DATA_ALESSANDRO]: undefined;
 };

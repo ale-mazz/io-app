@@ -317,6 +317,9 @@ profile:
     data:
       title: I tuoi dati
       description: Rivedi le tue informazioni
+    dataAlessandro:
+      title: Il tuo profilo
+      description: Dai un occhiata al tuo profilo
     preferences:
       title: Preferenze
       description: Gestisci le preferenze dell'applicazione
@@ -485,6 +488,9 @@ profile:
       title: Vuoi visualizzare il tuo Codice Fiscale?
       action: Vai alla sezione “I tuoi dati”
       close: Chiudi il banner e non mostrarlo più
+  dataAlessandro:
+    title: Profilo
+    subtitle: Un riepilogo dei tuoi dati anagrafici e di contatto
   data:
     title: I tuoi dati
     subtitle: Qui trovi i tuoi dati anagrafici e di contatto utilizzati da app IO

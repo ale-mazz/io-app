@@ -6,6 +6,7 @@ import { PersistedFeaturesState } from "../../features/common/store/reducers";
 import { PersistedLollipopState } from "../../features/lollipop/store";
 import { TrialSystemState } from "../../features/trialSystem/store/reducers";
 import { NotificationsState } from "../../features/pushNotifications/store/reducers";
+import { ProfileAlessandroState } from "../../features/profieAlessandro/store/reducers";
 import { AppState } from "./appState";
 import { AssistanceToolsState } from "./assistanceTools";
 import { PersistedAuthenticationState } from "./authentication";
@@ -41,6 +42,7 @@ export type GlobalState = Readonly<{
   notifications: NotificationsState;
   onboarding: OnboardingState;
   profile: ProfileState;
+  profileAlessandro: ProfileAlessandroState;
   userDataProcessing: UserDataProcessingState;
   wallet: WalletState;
   preferences: PreferencesState;

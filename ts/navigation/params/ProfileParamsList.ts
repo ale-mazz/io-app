@@ -33,4 +33,6 @@ export type ProfileParamsList = {
   [ROUTES.IDPAY_CODE_PLAYGROUND]: undefined;
   [ROUTES.IO_MARKDOWN_PLAYGROUND]: undefined;
   [ROUTES.SETTINGS_MAIN]: undefined;
+  // Profilo Alessandro
+  [ROUTES.PROFILE_DATA_ALESSANDRO]: undefined;
 };

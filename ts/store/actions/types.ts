@@ -9,6 +9,7 @@ import {
 } from "redux";
 import { VersionInfoActions } from "../../common/versionInfo/store/actions/versionInfo";
 import { BonusActions } from "../../features/bonus/common/store/actions";
+import { ProfileAlessandroActions } from "../../features/profieAlessandro/store/actions";
 import { EuCovidCertActions } from "../../features/euCovidCert/store/actions";
 import { FastLoginActions } from "../../features/fastLogin/store/actions";
 import { FciActions } from "../../features/fci/store/actions";
@@ -107,7 +108,8 @@ export type Action =
   | FimsActions
   | ItwActions
   | TrialSystemActions
-  | ProfileSettingsActions;
+  | ProfileSettingsActions
+  | ProfileAlessandroActions;
 
 export type Dispatch = DispatchAPI<Action>;
 

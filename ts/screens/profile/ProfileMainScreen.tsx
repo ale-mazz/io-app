@@ -5,8 +5,8 @@ import {
   IOVisualCostants,
   ListItemAction,
   ListItemNav,
-  VSpacer,
-  useIOToast
+  useIOToast,
+  VSpacer
 } from "@pagopa/io-app-design-system";
 import { Millisecond } from "@pagopa/ts-commons/lib/units";
 import React, {
@@ -141,6 +141,14 @@ const ProfileMainScreenFC = () => {
     [navigation]
   );
 
+  const navigateToProfileAlessandro = useCallback(
+    () =>
+      navigation.navigate(ROUTES.PROFILE_NAVIGATOR, {
+        screen: ROUTES.PROFILE_DATA_ALESSANDRO
+      }),
+    [navigation]
+  );
+
   const profileNavListItems = useMemo<ReadonlyArray<ProfileNavListItem>>(
     () => [
       {
@@ -148,6 +156,12 @@ const ProfileMainScreenFC = () => {
         value: I18n.t("profile.main.data.title"),
         description: I18n.t("profile.main.data.description"),
         onPress: navigateToProfile
+      },
+      {
+        // Data Alessandro
+        value: I18n.t("profile.main.dataAlessandro.title"),
+        description: I18n.t("profile.main.dataAlessandro.description"),
+        onPress: navigateToProfileAlessandro
       },
       {
         // Preferences
@@ -186,7 +200,7 @@ const ProfileMainScreenFC = () => {
           })
       }
     ],
-    [navigation, navigateToProfile]
+    [navigateToProfile, navigateToProfileAlessandro, navigation]
   );
 
   const handleCloseBanner = useCallback(() => {
