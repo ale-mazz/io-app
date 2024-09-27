@@ -20,19 +20,23 @@ export function* handleNewProfileData(
     // call the backend to get the profile data
     const response = yield* call(getProfile, action);
     if (E.isRight(response)) {
-      // if the response is 401, the user is not logged in and we don't need to do anything
-      if (response.right.status === 401) {
-        return;
-      }
-      // if the response is 200, we can update the state with the new data
-      if (response.right.status === 200) {
-        yield* put(
-          newProfileActions.success({
-            name: response.right.value.name,
-            fiscalCode: response.right.value.fiscal_code,
-            email: response.right.value.email || "Email not found"
-          })
-        );
+      switch (response.right.status) {
+        case 200:
+          // if the response is right and the status is 200, we update the state with the response value
+          yield* put(
+            newProfileActions.success({
+              name: response.right.value.name,
+              fiscalCode: response.right.value.fiscal_code,
+              email: response.right.value.email || "Email not found"
+            })
+          );
+          break;
+        case 401:
+          // if the response is right and the status is 401, we return early
+          break;
+        default:
+          // if the response is right and the status is not 200 or 401, we throw an error
+          throw new Error(`Unexpected status code: ${response.right.status}`);
       }
     } else {
       // if the response is not right, we throw an error with the readable report
@@ -46,16 +50,16 @@ export function* handleNewProfileData(
 
 /**
  * Watches the profile data request
- * @param getProfileAlessandro the function to call the backend
+ * @param getProfile the function to call the backend
  * @returns the saga iterator
  * Note: we are using takeLatest to handle only the latest request and ignore the previous ones
  */
 export function* watchNewProfileSaga(
-  getProfileAlessandro: ReturnType<typeof BackendClient>["getProfile"]
+  getProfile: ReturnType<typeof BackendClient>["getProfile"]
 ): SagaIterator {
   yield* takeLatest(
     newProfileActions.request,
     handleNewProfileData,
-    getProfileAlessandro
+    getProfile
   );
 }
