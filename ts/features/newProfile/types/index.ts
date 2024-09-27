@@ -6,8 +6,8 @@
  */
 type NewProfile = {
   name: string;
-  fiscalCode: string;
   email: string;
+  fiscalCode: string;
 };
 
 export default NewProfile;
