@@ -5,10 +5,18 @@ import { Action } from "../../../../store/actions/types";
 import NewProfile from "../../types";
 import { newProfileActions } from "../actions";
 
+/**
+ * State for the new profile feature
+ */
 export type NewProfileState = pot.Pot<NewProfile, NetworkError>;
 
 export const initialState: NewProfileState = pot.none;
 
+/**
+ * Reducer for the new profile feature
+ * @param state - the current state
+ * @param action - the action to apply
+ */
 const reducer = (
   state: NewProfileState = initialState,
   action: Action
