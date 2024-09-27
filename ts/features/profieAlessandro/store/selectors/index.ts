@@ -2,6 +2,9 @@ import { createSelector } from "reselect";
 import * as pot from "@pagopa/ts-commons/lib/pot";
 import { GlobalState } from "../../../../store/reducers/types";
 
+export const selectProfileAlessandro = (state: GlobalState) =>
+  state.profileAlessandro;
+
 export const selectProfileEmail = createSelector(
   (state: GlobalState) => state.profileAlessandro,
   profileAlessandro =>
@@ -9,11 +12,6 @@ export const selectProfileEmail = createSelector(
       pot.map(profileAlessandro, p => p.email),
       undefined
     )
-);
-
-export const selectProfileLoading = createSelector(
-  (state: GlobalState) => state.profileAlessandro,
-  profileAlessandro => pot.isLoading(profileAlessandro)
 );
 
 export const selectProfileName = createSelector(
