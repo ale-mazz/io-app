@@ -11,7 +11,6 @@ import { IOListItemVisualParams } from "@pagopa/io-app-design-system/src/core";
 export type ProfileAlessandroListItemProps = WithTestID<{
   label: string;
   value: string | React.ReactNode;
-  // Accessibility
   accessibilityLabel?: string;
 }> & {
   icon?: IOIcons;
