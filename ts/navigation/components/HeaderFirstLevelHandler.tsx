@@ -67,6 +67,13 @@ const headerHelpByRoute: Record<TabRoutes, SupportRequestParams> = {
       title: "wallet.contextualHelpTitle",
       body: "wallet.contextualHelpContent"
     }
+  },
+  [ROUTES.NEW_PROFILE]: {
+    faqCategories: ["profile"],
+    contextualHelpMarkdown: {
+      title: "profile.main.contextualHelpTitle",
+      body: "profile.main.contextualHelpContent"
+    }
   }
 };
 
