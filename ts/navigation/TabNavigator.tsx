@@ -12,7 +12,6 @@ import { SERVICES_ROUTES } from "../features/services/common/navigation/routes";
 import { ServicesHomeScreen } from "../features/services/home/screens/ServicesHomeScreen";
 import { useBottomTabNavigatorStyle } from "../hooks/useBottomTabNavigatorStyle";
 import I18n from "../i18n";
-import ProfileMainScreen from "../screens/profile/ProfileMainScreen";
 import WalletHomeScreen from "../screens/wallet/WalletHomeScreen";
 import { useIOSelector } from "../store/hooks";
 import {
@@ -20,7 +19,8 @@ import {
   isSettingsVisibleAndHideProfileSelector
 } from "../store/reducers/backendStatus";
 import { isDesignSystemEnabledSelector } from "../store/reducers/persistedPreferences";
-import { StartupStatusEnum, isStartupLoaded } from "../store/reducers/startup";
+import { isStartupLoaded, StartupStatusEnum } from "../store/reducers/startup";
+import NewProfileScreen from "../features/newProfile/screens";
 import { HeaderFirstLevelHandler } from "./components/HeaderFirstLevelHandler";
 import { useIONavigation } from "./params/AppParamsList";
 import { MainTabParamsList } from "./params/MainTabParamsList";
@@ -162,7 +162,10 @@ export const MainTabNavigator = () => {
             )
           }}
         />
-        {!isSettingsVisibleAndHideProfile && (
+        {/*
+        Commented only for the purpose of the test
+        */}
+        {/* {!isSettingsVisibleAndHideProfile && (
           <Tab.Screen
             name={ROUTES.PROFILE_MAIN}
             component={ProfileMainScreen}
@@ -178,7 +181,25 @@ export const MainTabNavigator = () => {
               )
             }}
           />
-        )}
+        )} */}
+        {/*
+        To be hidden behind a feature flag
+        */}
+        <Tab.Screen
+          name={ROUTES.NEW_PROFILE}
+          component={NewProfileScreen}
+          options={{
+            title: I18n.t("global.navigator.profile"),
+            tabBarIcon: ({ color, focused }) => (
+              <TabIconComponent
+                iconName="navProfile"
+                iconNameFocused="navProfileFocused"
+                color={color}
+                focused={focused}
+              />
+            )
+          }}
+        />
       </Tab.Navigator>
     </LoadingSpinnerOverlay>
   );
