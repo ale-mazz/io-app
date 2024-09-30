@@ -571,6 +571,10 @@ profile:
           content: If this option is enabled, push notifications show the sender and subject of messages, even when the screen is locked. This information is processed by your OS manager and by third-party apps that may be running.
           cta: Ok!
       error: An error occurred with your request
+newProfile:
+  data:
+    title: Your new profile
+    subtitle: Here you can find your personal and contact data used by the IO app
 navigation:
   messages: Messages
   profile: Profile
