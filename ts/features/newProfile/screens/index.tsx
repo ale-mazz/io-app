@@ -2,7 +2,9 @@ import React, { useCallback, useEffect } from "react";
 import {
   ContentWrapper,
   Divider,
-  ListItemInfo
+  ListItemInfo,
+  ListItemSwitch,
+  VSpacer
 } from "@pagopa/io-app-design-system";
 import * as pot from "@pagopa/ts-commons/lib/pot";
 import { IOScrollViewWithLargeHeader } from "../../../components/ui/IOScrollViewWithLargeHeader";
@@ -13,18 +15,37 @@ import NewProfileError from "../components/NewProfileError";
 import { useIODispatch, useIOSelector } from "../../../store/hooks";
 import { newProfileActions } from "../store/actions";
 import { selectNewProfile } from "../store/selectors";
+import {
+  areUserDataBeingDeletedSelector,
+  isUserDataProcessingDeleteLoadingSelector
+} from "../../../store/reducers/userDataProcessing";
+import { loadUserDataProcessing } from "../../../store/actions/userDataProcessing";
+import { UserDataProcessingChoiceEnum } from "../../../../definitions/backend/UserDataProcessingChoice";
 
 const NewProfileScreen = () => {
   const dispatch = useIODispatch();
   const newProfile = useIOSelector(selectNewProfile);
+  const userDataProcessingLoading = useIOSelector(
+    isUserDataProcessingDeleteLoadingSelector
+  );
+  const areUserDataBeingDeleted = useIOSelector(
+    areUserDataBeingDeletedSelector
+  );
 
   const loadProfile = useCallback(() => {
     dispatch(newProfileActions.request());
   }, [dispatch]);
 
+  const checkUserDataProcessing = useCallback(() => {
+    dispatch(
+      loadUserDataProcessing.request(UserDataProcessingChoiceEnum.DELETE)
+    );
+  }, [dispatch]);
+
   useEffect(() => {
     loadProfile();
-  }, [loadProfile]);
+    checkUserDataProcessing();
+  }, [checkUserDataProcessing, loadProfile]);
 
   const NewProfileContent = ({ value }: { value: NewProfile }) => (
     <>
@@ -87,6 +108,13 @@ const NewProfileScreen = () => {
     >
       <ContentWrapper>
         <NewProfileContentMapped />
+        <VSpacer size={48} />
+
+        <ListItemSwitch
+          label={I18n.t("newProfile.deleteFlow.deleteStatus")}
+          isLoading={userDataProcessingLoading}
+          value={areUserDataBeingDeleted}
+        />
       </ContentWrapper>
     </IOScrollViewWithLargeHeader>
   );

@@ -12,6 +12,7 @@ import {
   resetUserDataProcessingRequest,
   upsertUserDataProcessing
 } from "../actions/userDataProcessing";
+import { UserDataProcessingStatusEnum } from "../../../definitions/backend/UserDataProcessingStatus";
 import { GlobalState } from "./types";
 
 export type UserDataProcessingState = {
@@ -115,3 +116,8 @@ export const isUserDataProcessingDeleteLoadingSelector = (
 
 export const isUserDataProcessingDeleteErrorSelector = (state: GlobalState) =>
   pot.isError(state.userDataProcessing.DELETE);
+
+export const areUserDataBeingDeletedSelector = (state: GlobalState) =>
+  pot.isSome(state.userDataProcessing.DELETE) &&
+  pot.some(state.userDataProcessing.DELETE).value.value?.status ===
+    UserDataProcessingStatusEnum.PENDING;
