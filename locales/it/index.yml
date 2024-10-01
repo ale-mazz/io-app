@@ -575,6 +575,8 @@ newProfile:
   data:
     title: Il tuo nuovo Profilo
     subtitle: Qui trovi i tuoi dati anagrafici e di contatto utilizzati da app IO
+  deleteFlow:
+    deleteStatus: Il tuo profilo sta per essere cancellato
 navigation:
   messages: Messaggi
   profile: Profilo

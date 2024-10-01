@@ -575,6 +575,8 @@ newProfile:
   data:
     title: Your new profile
     subtitle: Here you can find your personal and contact data used by the IO app
+  deleteFlow:
+    deleteStatus: Your profile is being deleted
 navigation:
   messages: Messages
   profile: Profile
