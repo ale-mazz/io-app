@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewProfileError Component matches the snapshot 1`] = `
+<View
+  accessibilityRole="button"
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onTouchEnd={[Function]}
+>
+  <View
+    style={
+      [
+        {
+          "alignContent": "center",
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+        },
+        {
+          "borderCurve": "continuous",
+          "borderRadius": 8,
+          "padding": 16,
+        },
+        {
+          "backgroundColor": "#FFD9D9",
+        },
+        {
+          "transform": [
+            {
+              "scale": undefined,
+            },
+          ],
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        {
+          "marginRight": 12,
+        }
+      }
+    >
+      <RNSVGSvgView
+        accessibilityElementsHidden={true}
+        accessibilityLabel=""
+        accessible={false}
+        align="xMidYMid"
+        bbHeight={24}
+        bbWidth={24}
+        focusable={false}
+        height={24}
+        importantForAccessibility="no-hide-descendants"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "color": "#5D1313",
+            },
+            {
+              "flex": 0,
+              "height": 24,
+              "width": 24,
+            },
+          ]
+        }
+        tintColor="#5D1313"
+        vbHeight={24}
+        vbWidth={24}
+        width={24}
+      >
+        <RNSVGGroup
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+        >
+          <RNSVGPath
+            clipRule={0}
+            d="M7.00702 1c-.73494 0-1.41405.39209-1.78152 1.02856L.2756 11.0274c-.36747.6365-.36747 1.4206 0 2.0571l4.9499 8.8783c.36747.6365 1.04658 1.0286 1.78152 1.0286h9.94288c.7349 0 1.414-.3921 1.7815-1.0286l4.993-8.8783c.3675-.6365.3675-1.4206 0-2.0571l-4.993-8.99884C18.3639 1.39209 17.6848 1 16.9499 1H7.00702Zm5.02608 13.5549c.5676 0 1.0283-.4601 1.0283-1.0277V5.52583c0-.56758-.4601-1.02769-1.0277-1.02769-.5676 0-1.0282.46011-1.0282 1.02769v8.00137c0 .5676.4601 1.0277 1.0276 1.0277Zm0 1.9431c.8436 0 1.5275.6839 1.5275 1.5275 0 .8436-.6839 1.5275-1.5275 1.5275-.8436 0-1.5274-.6839-1.5274-1.5275 0-.8436.6838-1.5275 1.5274-1.5275Z"
+            fill={
+              {
+                "type": 2,
+              }
+            }
+            fillRule={0}
+            propList={
+              [
+                "fill",
+                "fillRule",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <View
+      style={
+        [
+          false,
+          {
+            "flex": 1,
+            "marginBottom": -6,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        color="error-850"
+        defaultColor="bluegreyDark"
+        defaultWeight="Semibold"
+        dynamicTypeRamp="title3"
+        font="TitilliumSansPro"
+        fontStyle={
+          {
+            "fontSize": 20,
+            "lineHeight": 24,
+          }
+        }
+        maxFontSizeMultiplier={1.25}
+        style={
+          [
+            {
+              "fontSize": 20,
+              "lineHeight": 24,
+            },
+            {
+              "color": "#5D1313",
+              "fontFamily": "Titillium Sans Pro",
+              "fontStyle": "normal",
+              "fontWeight": "600",
+            },
+          ]
+        }
+        weight="Semibold"
+      >
+        Error loading the profile
+      </Text>
+      <View
+        style={
+          {
+            "height": 8,
+          }
+        }
+      />
+      <Text
+        accessibilityRole="text"
+        allowFontScaling={false}
+        color="error-850"
+        defaultColor="black"
+        defaultWeight="Bold"
+        dynamicTypeRamp="footnote"
+        font="TitilliumSansPro"
+        fontStyle={
+          {
+            "fontSize": 16,
+            "lineHeight": 24,
+          }
+        }
+        maxFontSizeMultiplier={1.25}
+        style={
+          [
+            {
+              "fontSize": 16,
+              "lineHeight": 24,
+            },
+            {
+              "color": "#5D1313",
+              "fontFamily": "Titillium Sans Pro",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+            },
+          ]
+        }
+        weight="Regular"
+      >
+        An error occurred, please retry
+      </Text>
+      <View
+        style={
+          {
+            "height": 8,
+          }
+        }
+      />
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          [
+            {
+              "fontFamily": "Titillium Sans Pro",
+              "fontSize": 16,
+              "fontStyle": "normal",
+              "fontWeight": "700",
+            },
+            {
+              "color": "#5D1313",
+            },
+          ]
+        }
+      >
+        Retry
+      </Text>
+    </View>
+  </View>
+</View>
+`;
