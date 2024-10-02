@@ -83,7 +83,9 @@ const WalletScrollView = ({ children }: React.PropsWithChildren<any>) => {
   };
 
   const handleDeleteProfileButtonPress = () => {
-    navigation.navigate(ROUTES.NEW_PROFILE_STACK_NAVIGATOR);
+    navigation.navigate(ROUTES.NEW_PROFILE_STACK_NAVIGATOR, {
+      screen: ROUTES.NEW_PROFILE_DELETE_SCREEN
+    });
   };
 
   if (cards.length === 0) {
