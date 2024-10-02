@@ -576,6 +576,13 @@ newProfile:
     title: Your new profile
     subtitle: Here you can find your personal and contact data used by the IO app
   deleteFlow:
+    error: An error occurred while deleting your profile
+    retry: Please try again
+    title: Delete your profile
+    subtitle: Are you sure you want to delete your profile?
+    description: If you decide to continue, you will no longer be able to retrieve the messages or preferences you have set in the app.
+    reviewData: Review your data before deleting your profile
+    success: The profile deletion request has been processed
     deleteStatus: Your profile is being deleted
 navigation:
   messages: Messages
