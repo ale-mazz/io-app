@@ -7,7 +7,7 @@ import NewProfileDeleteSuccess from "../screens/NewProfileDeleteSuccess";
 import { NewProfileNavigatorParamList } from "./NewProfileParamsList";
 
 const Stack = createStackNavigator<NewProfileNavigatorParamList>();
-const ProfileNewNavigator = () => (
+const NewProfileStackNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen
       name={ROUTES.NEW_PROFILE_DELETE_SCREEN}
@@ -24,4 +24,4 @@ const ProfileNewNavigator = () => (
     />
   </Stack.Navigator>
 );
-export default ProfileNewNavigator;
+export default NewProfileStackNavigator;

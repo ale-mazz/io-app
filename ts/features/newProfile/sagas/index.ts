@@ -82,10 +82,12 @@ function* handleRemoveNewProfile() {
 export function* watchNewProfileSaga(
   getProfile: ReturnType<typeof BackendClient>["getProfile"]
 ): SagaIterator {
+  // watch for the profile data request
   yield* takeLatest(
     newProfileActions.request,
     handleNewProfileData,
     getProfile
   );
+  // watch for the remove profile/account request
   yield* takeLatest(upsertUserDataProcessing.request, handleRemoveNewProfile);
 }
