@@ -1,12 +1,12 @@
 import React from "react";
 import { createStore, PreloadedState } from "redux";
-import NewProfileScreen from "../index";
 import { appReducer } from "../../../../store/reducers";
 import { applicationChangeState } from "../../../../store/actions/application";
 import { GlobalState } from "../../../../store/reducers/types";
 import { renderScreenWithNavigationStoreContext } from "../../../../utils/testWrapper";
 import ROUTES from "../../../../navigation/routes";
 import I18n from "../../../../i18n";
+import NewProfileScreen from "../NewProfileScreen";
 
 const mockNavigate = jest.fn();
 

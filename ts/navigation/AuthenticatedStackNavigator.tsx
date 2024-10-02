@@ -76,6 +76,7 @@ import { ITW_ROUTES } from "../features/itwallet/navigation/routes";
 import { SearchScreen } from "../features/services/search/screens/SearchScreen";
 import { FIMS_ROUTES, FimsNavigator } from "../features/fims/common/navigation";
 import { MessagesSearchScreen } from "../features/messages/screens/MessagesSearchScreen";
+import NewProfileStackNavigator from "../features/newProfile/navigation/NewProfileStackNavigator";
 import CheckEmailNavigator from "./CheckEmailNavigator";
 import OnboardingNavigator from "./OnboardingNavigator";
 import { AppParamsList } from "./params/AppParamsList";
@@ -182,6 +183,12 @@ const AuthenticatedStackNavigator = () => {
           gestureEnabled: isGestureEnabled
         }}
         component={ProfileStackNavigator}
+      />
+
+      <Stack.Screen
+        name={ROUTES.NEW_PROFILE_STACK_NAVIGATOR}
+        options={hideHeaderOptions}
+        component={NewProfileStackNavigator}
       />
 
       <Stack.Screen

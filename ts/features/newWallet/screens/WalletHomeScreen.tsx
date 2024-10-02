@@ -27,6 +27,7 @@ import {
   trackOpenWalletScreen,
   trackWalletAdd
 } from "../../itwallet/analytics";
+import ROUTES from "../../../navigation/routes";
 
 type Props = IOStackNavigationRouteProps<MainTabParamsList, "WALLET_HOME">;
 
@@ -81,6 +82,10 @@ const WalletScrollView = ({ children }: React.PropsWithChildren<any>) => {
     });
   };
 
+  const handleDeleteProfileButtonPress = () => {
+    navigation.navigate(ROUTES.NEW_PROFILE_STACK_NAVIGATOR);
+  };
+
   if (cards.length === 0) {
     return (
       <ScrollView
@@ -103,6 +108,13 @@ const WalletScrollView = ({ children }: React.PropsWithChildren<any>) => {
         icon: "addSmall",
         iconPosition: "end",
         onPress: handleAddToWalletButtonPress
+      }}
+      secondaryActionProps={{
+        testID: "walletDeleteProfileButtonTestID",
+        label: I18n.t("newProfile.deleteFlow.title"),
+        icon: "trashcan",
+        iconPosition: "end",
+        onPress: handleDeleteProfileButtonPress
       }}
       excludeSafeAreaMargins={true}
     >
