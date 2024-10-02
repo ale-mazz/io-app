@@ -1,11 +1,15 @@
 import { SagaIterator } from "redux-saga";
-import { call, put, takeLatest } from "typed-redux-saga/macro";
-import { ActionType } from "typesafe-actions";
+import { call, put, take, takeLatest } from "typed-redux-saga/macro";
+import { ActionType, isActionOf } from "typesafe-actions";
 import * as E from "fp-ts/Either";
 import { readableReport } from "@pagopa/ts-commons/lib/reporters";
 import { BackendClient } from "../../../api/backend";
-import { newProfileActions } from "../store/actions";
+import {
+  navigateToRemoveNewProfileSuccess,
+  newProfileActions
+} from "../store/actions";
 import { getNetworkError } from "../../../utils/errors";
+import { upsertUserDataProcessing } from "../../../store/actions/userDataProcessing";
 
 /**
  * Handles the profile data request
@@ -48,6 +52,27 @@ export function* handleNewProfileData(
   }
 }
 
+// watch for action of removing account
+function* handleRemoveNewProfile() {
+  // wait for response (success/failure)
+  const upsertUserDataProcessingResponse = yield* take<
+    ActionType<
+      | typeof upsertUserDataProcessing.success
+      | typeof upsertUserDataProcessing.failure
+    >
+  >([upsertUserDataProcessing.success, upsertUserDataProcessing.failure]);
+
+  // if success go to remove account success screen
+  if (
+    isActionOf(
+      upsertUserDataProcessing.success,
+      upsertUserDataProcessingResponse
+    )
+  ) {
+    yield* call(navigateToRemoveNewProfileSuccess);
+  }
+}
+
 /**
  * Watches the profile data request
  * @param getProfile the function to call the backend
@@ -62,4 +87,5 @@ export function* watchNewProfileSaga(
     handleNewProfileData,
     getProfile
   );
+  yield* takeLatest(upsertUserDataProcessing.request, handleRemoveNewProfile);
 }
