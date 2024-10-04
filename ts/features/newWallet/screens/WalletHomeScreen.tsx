@@ -28,7 +28,7 @@ import {
   trackWalletAdd
 } from "../../itwallet/analytics";
 import ROUTES from "../../../navigation/routes";
-import { isNewFeatureProfileEnabled } from "../../../store/reducers/backendStatus";
+import { newProfileEnabled } from "../../../config";
 
 type Props = IOStackNavigationRouteProps<MainTabParamsList, "WALLET_HOME">;
 
@@ -113,7 +113,7 @@ const WalletScrollView = ({ children }: React.PropsWithChildren<any>) => {
         onPress: handleAddToWalletButtonPress
       }}
       secondaryActionProps={
-        isNewFeatureProfileEnabled
+        newProfileEnabled
           ? {
               testID: "walletDeleteProfileButtonTestID",
               label: I18n.t("newProfile.deleteFlow.title"),

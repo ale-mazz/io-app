@@ -15,13 +15,13 @@ import I18n from "../i18n";
 import WalletHomeScreen from "../screens/wallet/WalletHomeScreen";
 import { useIOSelector } from "../store/hooks";
 import {
-  isNewFeatureProfileEnabled,
   isNewPaymentSectionEnabledSelector,
   isSettingsVisibleAndHideProfileSelector
 } from "../store/reducers/backendStatus";
 import { isDesignSystemEnabledSelector } from "../store/reducers/persistedPreferences";
 import { isStartupLoaded, StartupStatusEnum } from "../store/reducers/startup";
 import NewProfileScreen from "../features/newProfile/screens/NewProfileScreen";
+import { newProfileEnabled } from "../config";
 import { HeaderFirstLevelHandler } from "./components/HeaderFirstLevelHandler";
 import { useIONavigation } from "./params/AppParamsList";
 import { MainTabParamsList } from "./params/MainTabParamsList";
@@ -183,7 +183,7 @@ export const MainTabNavigator = () => {
             }}
           />
         )} */}
-        {isNewFeatureProfileEnabled && (
+        {newProfileEnabled && (
           <Tab.Screen
             name={ROUTES.NEW_PROFILE}
             component={NewProfileScreen}
