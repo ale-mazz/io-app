@@ -444,6 +444,10 @@ export const isIdPayEnabledSelector = createSelector(
       O.getOrElse(() => false)
     )
 );
+/**
+ * Local flag used to simulate the new feature profile enabled/disabled feature flag
+ */
+export const isNewFeatureProfileEnabled = false;
 
 /**
  * Return the remote config about the new payment section enabled/disabled

@@ -15,6 +15,7 @@ import I18n from "../i18n";
 import WalletHomeScreen from "../screens/wallet/WalletHomeScreen";
 import { useIOSelector } from "../store/hooks";
 import {
+  isNewFeatureProfileEnabled,
   isNewPaymentSectionEnabledSelector,
   isSettingsVisibleAndHideProfileSelector
 } from "../store/reducers/backendStatus";
@@ -182,24 +183,23 @@ export const MainTabNavigator = () => {
             }}
           />
         )} */}
-        {/*
-        To be hidden behind a feature flag
-        */}
-        <Tab.Screen
-          name={ROUTES.NEW_PROFILE}
-          component={NewProfileScreen}
-          options={{
-            title: I18n.t("global.navigator.profile"),
-            tabBarIcon: ({ color, focused }) => (
-              <TabIconComponent
-                iconName="navProfile"
-                iconNameFocused="navProfileFocused"
-                color={color}
-                focused={focused}
-              />
-            )
-          }}
-        />
+        {isNewFeatureProfileEnabled && (
+          <Tab.Screen
+            name={ROUTES.NEW_PROFILE}
+            component={NewProfileScreen}
+            options={{
+              title: I18n.t("global.navigator.profile"),
+              tabBarIcon: ({ color, focused }) => (
+                <TabIconComponent
+                  iconName="navProfile"
+                  iconNameFocused="navProfileFocused"
+                  color={color}
+                  focused={focused}
+                />
+              )
+            }}
+          />
+        )}
       </Tab.Navigator>
     </LoadingSpinnerOverlay>
   );
