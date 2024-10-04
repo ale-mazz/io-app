@@ -444,7 +444,6 @@ export const isIdPayEnabledSelector = createSelector(
       O.getOrElse(() => false)
     )
 );
-
 /**
  * Return the remote config about the new payment section enabled/disabled
  * If the local feature flag is enabled, the remote config is ignored

@@ -576,6 +576,13 @@ newProfile:
     title: Il tuo nuovo Profilo
     subtitle: Qui trovi i tuoi dati anagrafici e di contatto utilizzati da app IO
   deleteFlow:
+    error: Errore durante la cancellazione del profilo
+    retry: Si prega di riprovare
+    title: Cancella il tuo profilo
+    subtitle: Sei sicuro di voler cancellare il tuo profilo?
+    description: Se elimini il tuo profilo, perderai tutti i dati e le preferenze salvate. Se cambi idea, dovrai registrarti nuovamente.
+    reviewData: Rivedi i tuoi dati che verranno cancellati
+    success: La richiesta di cancellazione del profilo è andata a buon fine
     deleteStatus: Il tuo profilo sta per essere cancellato
 navigation:
   messages: Messaggi

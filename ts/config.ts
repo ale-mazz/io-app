@@ -258,3 +258,6 @@ export const itwEaaVerifierBaseUrl = Config.ITW_EAA_VERIFIER_BASE_URL;
 export const itwBypassIdentityMatch =
   Config.ITW_BYPASS_IDENTITY_MATCH === "YES";
 export const itwIdpHintTest = Config.ITW_IDP_HINT_TEST === "YES";
+
+// New Profile
+export const newProfileEnabled = Config.NEW_PROFILE_ENABLED;
